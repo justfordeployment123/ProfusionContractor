@@ -1,8 +1,8 @@
 .enhanced-footer { 
-    background: linear-gradient(145deg, #1a1f2a, #1f2937 55%, #242a37); 
-    color: #d6dde3; 
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); 
+    color: var(--text-primary); 
     padding: clamp(3rem, 6vw, 4rem) 0 clamp(2rem, 4vw, 3rem); 
-    border-top: 1px solid rgba(255,255,255,0.1); 
+    border-top: 1px solid var(--border-light); 
     position: relative; 
     overflow: hidden;
   }
@@ -11,8 +11,22 @@
     content: ""; 
     position: absolute; 
     inset: 0; 
-    background: radial-gradient(circle at 20% 25%, rgba(255,255,255,0.05), transparent 60%); 
+    background: linear-gradient(135deg, rgba(210,105,30,0.05), transparent 60%); 
     pointer-events: none;
+  }
+  
+  .footer-logo-section {
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-light);
+  }
+  
+  .footer-company-logo {
+    height: 60px;
+    width: auto;
+    object-fit: contain;
+    opacity: 0.8;
   }
   
   .footer-grid { 
@@ -38,10 +52,7 @@
     letter-spacing: 0.05em; 
     font-weight: 700; 
     margin-bottom: 0.75rem; 
-    background: linear-gradient(90deg, #fff, #d1d5db); 
-    -webkit-background-clip: text; 
-    background-clip: text; 
-    color: transparent;
+    color: var(--text-primary);
   }
   
   .footer-suffix { 
@@ -52,7 +63,7 @@
     font-size: 0.9rem; 
     line-height: 1.6; 
     margin-bottom: 1.5rem; 
-    color: #b7c2c9;
+    color: var(--text-secondary);
   }
   
   .footer-col-title { 
@@ -61,7 +72,7 @@
     text-transform: uppercase; 
     font-weight: 600; 
     margin-bottom: 1rem; 
-    color: #ffffff;
+    color: var(--text-primary);
   }
   
   .footer-list { 
@@ -74,7 +85,7 @@
   }
   
   .footer-list a { 
-    color: #d6dde3; 
+    color: var(--text-secondary); 
     text-decoration: none; 
     position: relative; 
     transition: color 0.3s ease;
@@ -92,7 +103,7 @@
   }
   
   .footer-list a:hover { 
-    color: #ffffff;
+    color: var(--primary-orange);
   }
   
   .footer-list a:hover::after { 
@@ -100,7 +111,11 @@
   }
   
   .footer-list li { 
-    color: #d6dde3;
+    color: var(--text-secondary);
+  }
+  
+  .footer-list li strong {
+    color: var(--text-primary);
   }
   
   /* Mobile Responsiveness */

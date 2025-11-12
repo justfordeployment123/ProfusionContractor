@@ -36,8 +36,8 @@
   }
   
   .brand .logo { 
-    height: 32px; 
-    width: 96px; 
+    height: 48px; 
+    width: 144px; 
     object-fit: contain;
     display: block;
   }
@@ -223,8 +223,8 @@
     }
     
     .brand .logo { 
-      height: 22px; 
-      width: 66px; 
+      height: 36px; 
+      width: 108px; 
       object-fit: contain;
     }
   }
