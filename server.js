@@ -145,7 +145,6 @@ app.post('/api/save-lead', async (req, res) => {
 });
 
 // Use environment variable for PORT with safe local default
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-    console.log(`Server is running on http://localhost:${PORT}`);
-});
+app.listen(3000, "0.0.0.0", () => {
+    console.log("Server is running on http://0.0.0.0:3000");
+  });
