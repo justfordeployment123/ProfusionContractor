@@ -1,0 +1,28 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: profusion-app
+    restart: unless-stopped
+    depends_on:
+      - mongo
+    ports:
+      - "${APP_PORT:-3000}:3000"
+    environment:
+      PORT: 3000
+      MONGODB_URI: "mongodb://${MONGO_USERNAME:-profusion}:${MONGO_PASSWORD:-profusion_pass}@mongo:27017/${MONGO_DATABASE:-profusion}?authSource=admin"
+
+  mongo:
+    image: mongo:7
+    container_name: profusion-mongo
+    restart: unless-stopped
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: "${MONGO_USERNAME:-profusion}"
+      MONGO_INITDB_ROOT_PASSWORD: "${MONGO_PASSWORD:-profusion_pass}"
+      MONGO_INITDB_DATABASE: "${MONGO_DATABASE:-profusion}"
+    volumes:
+      - mongo_data:/data/db
+
+volumes:
+  mongo_data:
